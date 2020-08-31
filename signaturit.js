@@ -61,7 +61,7 @@ function fillArray(formArray, values, parent)
         if (value instanceof Array || value instanceof Object) {
             fillArray(formArray, value, parentKey);
         } else {
-            formArray.append(parentKey, value);
+            formArray.append(parentKey, typeof value === 'boolean' ? value.toString() : value);
         }
     }
 }
